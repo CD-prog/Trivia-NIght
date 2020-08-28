@@ -1,0 +1,48 @@
+<div class="container text-center">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="profile tracking-in-contract">
+        <h1 style="color:aliceblue;font-size:75px;"> Hello, {{{ user.userName }}} </h1>
+        <p style="color:aliceblue;font-size:75px;">Welcome to Trivia Night !</p>
+    </div>
+    <button id="start-btn" type="button" class="btn btn-success btn-lg heartbeat">Start The Game</button>
+    <br>
+    <br>
+    <h5 class="stats" style="color:white;font-size:xx-large">Your Overall Stats</h5>
+    <br>
+    {{#each overall}}
+    <div class="slide-in-elliptic-bottom-bck" style="width: 70%;display:inline-block;margin:10px">
+        <div class="card border-light mb-3" style="background-color:black;opacity:0.8;font-weight:bold">
+            <div class="card-body">
+                <p style="font-size: x-large;">Total Correct: {{totalCorrect}}</p>
+                <p style="font-size: x-large;">Total Answered: {{totalAnswered}}</p>
+                <p style="font-size: x-large;">Correct Percentage: {{overallPercentCorrect}}</p>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    <br>
+    <h5 class="stats" style="color: white;font-size:xx-large">Stats by Category</h5>
+    <br>
+    {{#each scores}}
+    <div class="slide-in-elliptic-bottom-bck" style="width:29%;display:inline-block;margin:10px">
+        <div class="card border-light mb-3" style="background-color:black;opacity:0.8;font-weight:bold">
+            <div class="card-header" style="color:black;background-color:white;height:60px">{{categoryName}}</div>
+            <div class="card-body">
+                <p>Total Correct: {{totalCorrect}}</p>
+                <p>Total Answered: {{totalAnswered}}</p>
+                <p>Percentage in Category: {{ categoryPercentCorrect}}</p>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    <br>
+    <button id="logout-btn" type="button" class="btn btn-primary">Logout</button>
+    <button id="delete-btn" type="button" class="btn btn-danger" data-id="{{user.id}}">Delete Profile</button>
+    <br>
+    <br>
+    <br>
+</div>
+<script src="/js/profile.js"></script>
